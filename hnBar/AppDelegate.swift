@@ -17,6 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var menu: NSMenu!
     
     let statusBarItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    lazy var windowController = SettingWindow(windowNibName: "SettingWindow")
     
     var itemDict: [NSMenuItem:String] = Dictionary()
     
@@ -64,8 +65,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             })
         }
     }
+    @IBAction func openSetting(sender: AnyObject) {
+        windowController.showWindow(sender)
+    }
     
     @IBAction func refreshClicked(sender: AnyObject) {
+        
         refresh()
     }
     
