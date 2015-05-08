@@ -68,7 +68,7 @@
                                     </tableColumns>
                                     <connections>
                                         <outlet property="dataSource" destination="-2" id="9LI-kt-aI2"/>
-                                        <outlet property="delegate" destination="-2" id="drX-wf-vIV"/>
+                                        <outlet property="delegate" destination="-2" id="AsH-CC-0ZB"/>
                                     </connections>
                                 </tableView>
                             </subviews>
@@ -96,6 +96,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="addClicked:" target="-2" id="dlu-ID-ftM"/>
+                        </connections>
                     </button>
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="xNZ-yY-Yaw">
                         <rect key="frame" x="47" y="25" width="28" height="28"/>
@@ -105,6 +108,9 @@
                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="remove" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MNM-wb-XiJ">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="removeClicked:" target="-2" id="M5L-Xa-0pe"/>
+                            </connections>
                         </buttonCell>
                     </button>
                 </subviews>

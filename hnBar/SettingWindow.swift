@@ -17,6 +17,12 @@ class SettingWindow: NSWindowController {
         
     }
     
+    @IBAction func addClicked(sender: AnyObject) {
+        println("add")
+    }
+    
+    @IBAction func removeClicked(sender: AnyObject) {
+    }
 }
 
 extension SettingWindow: NSTableViewDataSource {
