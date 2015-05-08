@@ -669,6 +669,12 @@
         <menu id="UbD-ZQ-3at">
             <items>
                 <menuItem isSeparatorItem="YES" id="kWb-ab-nzH"/>
+                <menuItem title="Settings" image="wrench" id="5PC-Ls-XjN">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openSetting:" target="Voe-Tx-rLC" id="jib-bG-ATo"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Refresh" image="refresh" keyEquivalent="r" id="DKr-yn-LcK">
                     <connections>
                         <action selector="refreshClicked:" target="Voe-Tx-rLC" id="yke-eO-k2F"/>
@@ -680,11 +686,12 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="265.5" y="326.5"/>
+            <point key="canvasLocation" x="275.5" y="394.5"/>
         </menu>
     </objects>
     <resources>
         <image name="left" width="16" height="16"/>
         <image name="refresh" width="16" height="16"/>
+        <image name="wrench" width="16" height="16"/>
     </resources>
 </document>
