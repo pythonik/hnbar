@@ -22,6 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var itemDict: [NSMenuItem:String] = Dictionary()
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
         if let icon = NSImage(named: "AppIcon"){
             icon.setTemplate(true)
             statusBarItem.image = icon
