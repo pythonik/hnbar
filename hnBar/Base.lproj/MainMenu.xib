@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -668,20 +668,23 @@
         </menu>
         <menu id="UbD-ZQ-3at">
             <items>
-                <menuItem title="---break---" id="dkE-Mi-TRM">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem isSeparatorItem="YES" id="kWb-ab-nzH"/>
+                <menuItem title="Refresh" image="refresh" keyEquivalent="r" id="DKr-yn-LcK">
+                    <connections>
+                        <action selector="refreshClicked:" target="Voe-Tx-rLC" id="yke-eO-k2F"/>
+                    </connections>
                 </menuItem>
-                <menuItem title="Refresh" id="DKr-yn-LcK">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Exit" id="Af5-aI-CPt">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Quit" image="left" keyEquivalent="q" id="Af5-aI-CPt">
                     <connections>
                         <action selector="exitClicked:" target="Voe-Tx-rLC" id="4Hq-gb-k6u"/>
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-20" y="322.5"/>
+            <point key="canvasLocation" x="265.5" y="326.5"/>
         </menu>
     </objects>
+    <resources>
+        <image name="left" width="16" height="16"/>
+        <image name="refresh" width="16" height="16"/>
+    </resources>
 </document>
