@@ -1,4 +1,3 @@
-# hnbar
-A litte effort to learn swift.. 
--------------------------------
-Work in progress....
+# Hacker News Bar
+- A Menu bar application grabs hacker news front page for OSX
+
