@@ -16,6 +16,7 @@
 		BC9AD4D61AFD135700CE1BAE /* SettingWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9AD4D41AFD135700CE1BAE /* SettingWindow.xib */; };
 		BC9AD4E01AFD57C300CE1BAE /* hnBar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC9AD4DE1AFD57C300CE1BAE /* hnBar.xcdatamodeld */; };
 		BCF656641B0481F800C35656 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF656631B0481F800C35656 /* Tag.swift */; };
+		BCF656661B048EA600C35656 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BCF656651B048EA600C35656 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		BC9AD4D41AFD135700CE1BAE /* SettingWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingWindow.xib; sourceTree = "<group>"; };
 		BC9AD4DF1AFD57C300CE1BAE /* hnBar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hnBar.xcdatamodel; sourceTree = "<group>"; };
 		BCF656631B0481F800C35656 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		BCF656651B048EA600C35656 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		BC3D9EFC1AB1FF5C006C20E0 = {
 			isa = PBXGroup;
 			children = (
+				BCF656651B048EA600C35656 /* .gitignore */,
 				BCF656631B0481F800C35656 /* Tag.swift */,
 				BC9AD4E51AFD5D5300CE1BAE /* Model */,
 				BC3D9F071AB1FF5C006C20E0 /* hnBar */,
@@ -209,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF656661B048EA600C35656 /* .gitignore in Resources */,
 				BC3D9F0D1AB1FF5C006C20E0 /* Images.xcassets in Resources */,
 				BC9AD4D61AFD135700CE1BAE /* SettingWindow.xib in Resources */,
 				BC3D9F101AB1FF5C006C20E0 /* MainMenu.xib in Resources */,
