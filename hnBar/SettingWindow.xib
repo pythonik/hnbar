@@ -7,6 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SettingWindow" customModule="hnBar" customModuleProvider="target">
             <connections>
                 <outlet property="interest" destination="H8i-9e-4nc" id="aIm-d0-brI"/>
+                <outlet property="tags" destination="MQv-1o-XMZ" id="CqO-U4-5nv"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="Mf9-IA-cns"/>
             </connections>
         </customObject>
@@ -16,7 +17,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="505" height="467"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="505" height="467"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -51,6 +52,9 @@
                                             </connections>
                                         </tableColumn>
                                     </tableColumns>
+                                    <connections>
+                                        <outlet property="delegate" destination="-2" id="wjH-aC-DOH"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
