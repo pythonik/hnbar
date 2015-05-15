@@ -23,7 +23,7 @@ class SettingWindow: NSWindowController {
     override func windowDidLoad() {
         interest.formatter = OnlyNumber()
         super.windowDidLoad()
-        
+        NSApp.activateIgnoringOtherApps(true)
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         
     }
