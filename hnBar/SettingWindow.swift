@@ -16,6 +16,7 @@ class SettingWindow: NSWindowController {
     
     @IBOutlet var tags: NSArrayController!
     
+    @IBOutlet weak var newstable: NSTableView!
     
     
     var managedObjectContext: NSManagedObjectContext? = {
@@ -25,6 +26,7 @@ class SettingWindow: NSWindowController {
     }()
     
     var npi = NSProgressIndicator()
+    var newsArray = [News]()
     
     override func windowDidLoad() {
         interest.formatter = OnlyNumber()
@@ -36,29 +38,67 @@ class SettingWindow: NSWindowController {
     }
 }
 
+extension SettingWindow: NSTableViewDataSource {
+    func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
+        println(newsArray.count)
+        return newsArray.count
+    }
+    
+    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject? {
+            var cellView =  NSTextFieldCell()
+            if tableColumn!.identifier == "title" {
+                let news = self.newsArray[row]
+                cellView.stringValue = news.title!
+            }
+        if tableColumn!.identifier == "points" {
+            let news = self.newsArray[row]
+            cellView.stringValue = "0"
+            if let v = news.points {
+                cellView.stringValue = v.stringValue
+            }
+        }
+            return cellView
+    }
+}
+
 
 extension SettingWindow: NSTableViewDelegate {
     
+    
+    
     func tableViewSelectionDidChange(notification: NSNotification) {
         if tags.selectedObjects.count > 0 {
-            let query = tags.selectedObjects[0].name
-            if let url = NSURL(string: "http://hn.algolia.com/api/v1/search?query=\(query)") {
-                println(url)
-                let request = NSURLRequest(URL: url)
-                let queue:NSOperationQueue = NSOperationQueue()
-                
-                NSURLConnection.sendAsynchronousRequest(request, queue: queue,
-                    completionHandler:{ response, data, error in
-                        if let httpResponse = response as? NSHTTPURLResponse {
-                            if httpResponse.statusCode == 200 {
-                                let resp = JSON(data:data)
-                                for (index: String, subJson: JSON) in resp["hits"] {
-                                    println(subJson["title"].string)
-                                    println(subJson["url"].string)
+            
+            if let tag = tags.selectedObjects[0] as? Tag {
+                if let query = tag.name {
+                    
+                    if let url = NSURL(string: "http://hn.algolia.com/api/v1/search?query=\(query)") {
+                        
+                        let request = NSURLRequest(URL: url)
+                        let queue:NSOperationQueue = NSOperationQueue()
+                    
+                        NSURLConnection.sendAsynchronousRequest(request, queue: queue,
+                            completionHandler:{ response, data, error in
+                                if let httpResponse = response as? NSHTTPURLResponse {
+                                    if httpResponse.statusCode == 200 {
+                                        let resp = JSON(data:data)
+                                        for (index: String, subJson: JSON) in resp["hits"] {
+                                            println(subJson["title"].string)
+                                            println(subJson["url"].string)
+                                            println(subJson["points"].int)
+                                            var n = News()
+                                            n.title = subJson["title"].string!
+                                            n.url = subJson["url"].string!
+                                            n.points = subJson["points"].int!
+                                            self.newsArray.append(n)
+                                        }
+                                    }
+                                    self.newstable.reloadData()
                                 }
-                            }
-                        }
-                })
+                                
+                            })
+                    }
+                }
             }
         }
     }

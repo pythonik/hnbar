@@ -6,12 +6,13 @@
 //  Copyright (c) 2015 Kun Su. All rights reserved.
 //
 
-import Foundation
-import CoreData
 
-class News: NSManagedObject {
+import AppKit
 
-    @NSManaged var title: String
-    @NSManaged var url: String
+class News: NSObject {
+
+    var title: String?
+    var url: String?
+    var points: NSNumber?
 
 }

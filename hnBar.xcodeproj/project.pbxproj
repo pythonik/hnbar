@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC3A6BBB1B05D67F0029B1F5 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3A6BBA1B05D67F0029B1F5 /* News.swift */; };
 		BC3D9F0B1AB1FF5C006C20E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3D9F0A1AB1FF5C006C20E0 /* AppDelegate.swift */; };
 		BC3D9F0D1AB1FF5C006C20E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3D9F0C1AB1FF5C006C20E0 /* Images.xcassets */; };
 		BC3D9F101AB1FF5C006C20E0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3D9F0E1AB1FF5C006C20E0 /* MainMenu.xib */; };
@@ -16,6 +15,7 @@
 		BC9AD4D51AFD135700CE1BAE /* SettingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9AD4D31AFD135700CE1BAE /* SettingWindow.swift */; };
 		BC9AD4D61AFD135700CE1BAE /* SettingWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9AD4D41AFD135700CE1BAE /* SettingWindow.xib */; };
 		BC9AD4E01AFD57C300CE1BAE /* hnBar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC9AD4DE1AFD57C300CE1BAE /* hnBar.xcdatamodeld */; };
+		BCE4AF171B06DE54000375FD /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE4AF161B06DE54000375FD /* News.swift */; };
 		BCF656641B0481F800C35656 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF656631B0481F800C35656 /* Tag.swift */; };
 		BCF656661B048EA600C35656 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BCF656651B048EA600C35656 /* .gitignore */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC3A6BBA1B05D67F0029B1F5 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		BC3D9F051AB1FF5C006C20E0 /* hnBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hnBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3D9F091AB1FF5C006C20E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC3D9F0A1AB1FF5C006C20E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		BC9AD4D31AFD135700CE1BAE /* SettingWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingWindow.swift; sourceTree = "<group>"; };
 		BC9AD4D41AFD135700CE1BAE /* SettingWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingWindow.xib; sourceTree = "<group>"; };
 		BC9AD4DF1AFD57C300CE1BAE /* hnBar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hnBar.xcdatamodel; sourceTree = "<group>"; };
+		BCE4AF161B06DE54000375FD /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		BCF656631B0481F800C35656 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		BCF656651B048EA600C35656 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				BCF656631B0481F800C35656 /* Tag.swift */,
-				BC3A6BBA1B05D67F0029B1F5 /* News.swift */,
+				BCE4AF161B06DE54000375FD /* News.swift */,
 				BC9AD4DE1AFD57C300CE1BAE /* hnBar.xcdatamodeld */,
 			);
 			name = Model;
@@ -245,7 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC3A6BBB1B05D67F0029B1F5 /* News.swift in Sources */,
+				BCE4AF171B06DE54000375FD /* News.swift in Sources */,
 				BC9AD4E01AFD57C300CE1BAE /* hnBar.xcdatamodeld in Sources */,
 				BC9AD4D51AFD135700CE1BAE /* SettingWindow.swift in Sources */,
 				BCF656641B0481F800C35656 /* Tag.swift in Sources */,

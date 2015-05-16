@@ -11,6 +11,6 @@ import CoreData
 
 class Tag: NSManagedObject {
 
-    @NSManaged var name: String
+    @NSManaged var name: String?
 
 }
