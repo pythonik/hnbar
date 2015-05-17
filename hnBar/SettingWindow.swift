@@ -81,6 +81,7 @@ extension SettingWindow: NSTableViewDelegate {
                             completionHandler:{ response, data, error in
                                 if let httpResponse = response as? NSHTTPURLResponse {
                                     if httpResponse.statusCode == 200 {
+                                        self.newsArray.removeAll(keepCapacity: false)
                                         let resp = JSON(data:data)
                                         for (index: String, subJson: JSON) in resp["hits"] {
                                             println(subJson["title"].string)
