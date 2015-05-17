@@ -2,7 +2,13 @@
 hnBar is a OSX menu status bar application let you access HackerNews front page one click
 
 ## Motivation
-A similar software cost $2 dollar on AppStroe. As a hacker by heart I can not tolerate this...
+A similar software cost $2 dollar on AppStroe. As a hacker by heart I don't wanna pay...
+
+<img src="https://github.com/pythonik/hnbar/blob/master/doc/image2.png" width="600" height="444" />
+
+## Introduction
+
+This software runs menu status bar, currently displays the latest front page on the menu.
 
 <img src="https://github.com/pythonik/hnbar/blob/master/doc/image0.png" width="600" height="444" />
 
