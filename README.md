@@ -1,5 +1,8 @@
 # Hacker News Bar
 hnBar is a OSX menu bar application let you access Tech News site HackerNews's front page with one click
+## Installation
+git clone and open it with Xcode. Build and Run..
+I will provide a dmg file upon request
 
 ## Motivation
 A similar software cost $2 dollar on AppStroe. As a hacker by heart I don't wanna pay...
