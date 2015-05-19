@@ -64,40 +64,31 @@ extension SettingWindow: NSTableViewDataSource {
 
 extension SettingWindow: NSTableViewDelegate {
     
-    
-    
     func tableViewSelectionDidChange(notification: NSNotification) {
         if tags.selectedObjects.count > 0 {
-            
             if let tag = tags.selectedObjects[0] as? Tag {
                 if let query = tag.name {
-                    
                     if let url = NSURL(string: "http://hn.algolia.com/api/v1/search?query=\(query)") {
                         
                         let request = NSURLRequest(URL: url)
-                        let queue:NSOperationQueue = NSOperationQueue()
-                    
-                        NSURLConnection.sendAsynchronousRequest(request, queue: queue,
-                            completionHandler:{ response, data, error in
-                                if let httpResponse = response as? NSHTTPURLResponse {
-                                    if httpResponse.statusCode == 200 {
-                                        self.newsArray.removeAll(keepCapacity: false)
-                                        let resp = JSON(data:data)
-                                        for (index: String, subJson: JSON) in resp["hits"] {
-                                            println(subJson["title"].string)
-                                            println(subJson["url"].string)
-                                            println(subJson["points"].int)
-                                            var n = News()
-                                            n.title = subJson["title"].string!
-                                            n.url = subJson["url"].string!
-                                            n.points = subJson["points"].int!
-                                            self.newsArray.append(n)
-                                        }
-                                    }
-                                    self.newstable.reloadData()
+                        var response: NSURLResponse?
+                        var error: NSError?
+                        var data:NSData = NSURLConnection.sendSynchronousRequest(request,returningResponse: &response, error: &error)!
+                        
+                        if let httpResponse = response as? NSHTTPURLResponse {
+                            if httpResponse.statusCode == 200 {
+                                self.newsArray.removeAll(keepCapacity: false)
+                                let resp = JSON(data:data)
+                                for (index: String, subJson: JSON) in resp["hits"] {
+                                    var n = News()
+                                    n.title = subJson["title"].string!
+                                    n.url = subJson["url"].string!
+                                    n.points = subJson["points"].int!
+                                    self.newsArray.append(n)
                                 }
-                                
-                            })
+                            }
+                            self.newstable.reloadData()
+                        }
                     }
                 }
             }
