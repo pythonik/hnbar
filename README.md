@@ -5,7 +5,7 @@ git clone and open it with Xcode. Build and Run..
 I will provide a dmg file upon request
 
 ## Motivation
-A similar software cost $2 dollar on AppStroe. As a hacker by heart I don't wanna pay...
+A similar software cost $2 dollar on AppStroe. I could save it and learn some new technology...
 
 <img src="https://github.com/pythonik/hnbar/blob/master/doc/image2.png" width="600" height="444" />
 
