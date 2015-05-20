@@ -36,6 +36,18 @@ class SettingWindow: NSWindowController {
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         
     }
+    
+    @IBAction func prePage(sender: AnyObject) {
+        
+        
+    }
+    @IBAction func nextPage(sender: AnyObject) {
+        
+    }
+    
+    func synchrousSearch(query:NSURL) -> NSData?{
+        return nil
+    }
 }
 
 extension SettingWindow: NSTableViewDataSource {
