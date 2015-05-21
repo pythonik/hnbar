@@ -45,8 +45,13 @@ class SettingWindow: NSWindowController {
         
     }
     
-    func synchrousSearch(query:NSURL) -> NSData?{
-        return nil
+    func synchrousSearch(query:NSURL) -> (NSData?, NSURLResponse?, NSError?) {
+        let request = NSURLRequest(URL: query)
+        var response: NSURLResponse?
+        var error: NSError?
+        var data:NSData? = NSURLConnection.sendSynchronousRequest(request,
+            returningResponse: &response, error: &error)!
+        return (data, response, error)
     }
 }
 
@@ -81,16 +86,11 @@ extension SettingWindow: NSTableViewDelegate {
             if let tag = tags.selectedObjects[0] as? Tag {
                 if let query = tag.name {
                     if let url = NSURL(string: "http://hn.algolia.com/api/v1/search?query=\(query)") {
-                        
-                        let request = NSURLRequest(URL: url)
-                        var response: NSURLResponse?
-                        var error: NSError?
-                        var data:NSData = NSURLConnection.sendSynchronousRequest(request,returningResponse: &response, error: &error)!
-                        
+                        let (data, response, error) = synchrousSearch(url)
                         if let httpResponse = response as? NSHTTPURLResponse {
                             if httpResponse.statusCode == 200 {
                                 self.newsArray.removeAll(keepCapacity: false)
-                                let resp = JSON(data:data)
+                                let resp = JSON(data:data!)
                                 for (index: String, subJson: JSON) in resp["hits"] {
                                     var n = News()
                                     n.title = subJson["title"].string!
