@@ -16,7 +16,7 @@ class SettingWindow: NSWindowController {
     
     @IBOutlet var tags: NSArrayController!
     
-    @IBOutlet weak var newstable: NSTableView!
+    @IBOutlet weak var newsTable: NSTableView!
     
     
     var managedObjectContext: NSManagedObjectContext? = {
@@ -32,9 +32,21 @@ class SettingWindow: NSWindowController {
         interest.formatter = OnlyNumber()
         super.windowDidLoad()
         NSApp.activateIgnoringOtherApps(true)
-        
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-        
+        newsTable.target = self
+        newsTable.doubleAction = Selector("doubleClick:")
+    }
+    
+    func doubleClick(sender:AnyObject) {
+        if let url = NSURL(string: newsArray[newsTable.selectedRow].url!){
+            if NSWorkspace.sharedWorkspace().openURL(url) {
+                println("url successfully opened")
+            }else{
+                let alert = NSAlert()
+                alert.icon = NSImage(named:"alert-circled")
+                alert.messageText = "Can not open: " + newsArray[newsTable.selectedRow].url!
+                alert.runModal()
+            }
+        }
     }
     
     @IBAction func prePage(sender: AnyObject) {
@@ -56,8 +68,8 @@ class SettingWindow: NSWindowController {
 }
 
 extension SettingWindow: NSTableViewDataSource {
+    
     func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
-        println(newsArray.count)
         return newsArray.count
     }
     
@@ -99,7 +111,7 @@ extension SettingWindow: NSTableViewDelegate {
                                     self.newsArray.append(n)
                                 }
                             }
-                            self.newstable.reloadData()
+                            self.newsTable.reloadData()
                         }
                     }
                 }
