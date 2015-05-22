@@ -28,13 +28,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             statusBarItem.image = icon
             statusBarItem.menu = menu
         }
-        /*
-        var tags = [Tag]()
-        var request:NSFetchRequest = NSFetchRequest(entityName: "Tag")
-        var error:NSError?
-        tags = managedObjectContext?.executeFetchRequest(request, error: &error) as! [Tag]
-        println(tags)
-        */
         refresh()
     }
     
@@ -76,7 +69,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     @IBAction func openSetting(sender: AnyObject) {
         
-        //windowController.managedObjectContext = self.managedObjectContext
         windowController.showWindow(sender)
         
     }

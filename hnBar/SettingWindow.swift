@@ -94,8 +94,11 @@ extension SettingWindow: NSTableViewDataSource {
 extension SettingWindow: NSTableViewDelegate {
     
     func tableViewSelectionDidChange(notification: NSNotification) {
+        // something is selected
         if tags.selectedObjects.count > 0 {
+            // if it is legit item
             if let tag = tags.selectedObjects[0] as? Tag {
+                // if optional var name is not nil
                 if let query = tag.name {
                     if let url = NSURL(string: "http://hn.algolia.com/api/v1/search?query=\(query)") {
                         let (data, response, error) = synchrousSearch(url)
@@ -133,13 +136,14 @@ class OnlyNumber: NSFormatter {
     }
     
     override func isPartialStringValid(partialString: String,
-        newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>,
-        errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
+                                       newEditingString newString: AutoreleasingUnsafeMutablePointer<NSString?>,
+                                       errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>) -> Bool {
+        
+        
         if(partialString.rangeOfCharacterFromSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet) != nil) {
             NSBeep()
             return false
         }
-        
         return true
     }
     
