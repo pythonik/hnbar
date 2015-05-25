@@ -37,6 +37,10 @@ class SettingWindow: NSWindowController {
     }
     
     func doubleClick(sender:AnyObject) {
+        if newsTable.selectedRow < 0 {
+           return
+        }
+        
         if let url = NSURL(string: newsArray[newsTable.selectedRow].url!){
             if NSWorkspace.sharedWorkspace().openURL(url) {
                 println("url successfully opened")
