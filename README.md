@@ -4,12 +4,14 @@ hnBar is a OSX menu bar application let you access Tech News site HackerNews's f
 git clone and open it with Xcode. Build and Run..
 I will provide a dmg file upon request
 
-## Motivation
+Motivation
+==========
 A similar software cost $2 dollar on AppStroe. I could save it and learn some new technology...
 
 <img src="https://github.com/pythonik/hnbar/blob/master/doc/image2.png" width="600" height="444" />
 
-## Introduction
+Introduction
+============
 
 This software runs menu status bar, currently displays the latest front page on the menu.
 
