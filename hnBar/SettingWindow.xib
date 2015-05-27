@@ -193,12 +193,21 @@
                             <action selector="prePage:" target="-2" id="tdo-pa-R2m"/>
                         </connections>
                     </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="35f-79-OQt">
+                        <rect key="frame" x="511" y="413" width="123" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Keywords To Search" id="uD2-ws-ISL">
+                            <font key="font" metaFont="cellTitle"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="-111" y="232.5"/>
+            <point key="canvasLocation" x="-196" y="195.5"/>
         </window>
         <arrayController mode="entity" entityName="Tag" automaticallyPreparesContent="YES" id="MQv-1o-XMZ" userLabel="tagController">
             <connections>
