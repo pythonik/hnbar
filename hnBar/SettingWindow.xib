@@ -55,6 +55,7 @@
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
+                                        <action selector="singleClick:" target="-2" id="VVA-Qe-Mxx"/>
                                         <outlet property="delegate" destination="-2" id="wjH-aC-DOH"/>
                                     </connections>
                                 </tableView>

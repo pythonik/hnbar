@@ -53,6 +53,39 @@ class SettingWindow: NSWindowController {
         }
     }
     
+    func sendRequestForSelectedRow() {
+        // something is selected
+        if tags.selectedObjects.count > 0 {
+            // if it is legit item
+            if let tag = tags.selectedObjects[0] as? Tag {
+                // if optional var name is not nil
+                if let query = tag.name {
+                    if let url = NSURL(string: "http://hn.algolia.com/api/v1/search?query=\(query)") {
+                        let (data, response, error) = synchrousSearch(url)
+                        if let httpResponse = response as? NSHTTPURLResponse {
+                            if httpResponse.statusCode == 200 {
+                                self.newsArray.removeAll(keepCapacity: false)
+                                let resp = JSON(data:data!)
+                                for (index: String, subJson: JSON) in resp["hits"] {
+                                    var n = News()
+                                    n.title = subJson["title"].string!
+                                    n.url = subJson["url"].string!
+                                    n.points = subJson["points"].int!
+                                    self.newsArray.append(n)
+                                }
+                            }
+                            self.newsTable.reloadData()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func singleClick(sender: AnyObject) {
+        sendRequestForSelectedRow()
+        
+    }
     @IBAction func prePage(sender: AnyObject) {
         
         
@@ -98,34 +131,10 @@ extension SettingWindow: NSTableViewDataSource {
 extension SettingWindow: NSTableViewDelegate {
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        // something is selected
-        if tags.selectedObjects.count > 0 {
-            // if it is legit item
-            if let tag = tags.selectedObjects[0] as? Tag {
-                // if optional var name is not nil
-                if let query = tag.name {
-                    if let url = NSURL(string: "http://hn.algolia.com/api/v1/search?query=\(query)") {
-                        let (data, response, error) = synchrousSearch(url)
-                        if let httpResponse = response as? NSHTTPURLResponse {
-                            if httpResponse.statusCode == 200 {
-                                self.newsArray.removeAll(keepCapacity: false)
-                                let resp = JSON(data:data!)
-                                for (index: String, subJson: JSON) in resp["hits"] {
-                                    var n = News()
-                                    n.title = subJson["title"].string!
-                                    n.url = subJson["url"].string!
-                                    n.points = subJson["points"].int!
-                                    self.newsArray.append(n)
-                                }
-                            }
-                            self.newsTable.reloadData()
-                        }
-                    }
-                }
-            }
-        }
+        sendRequestForSelectedRow()
     }
 }
+
 
 class OnlyNumber: NSFormatter {
     
